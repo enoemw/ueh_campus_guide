@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UEH Campus Guide</title>
+<meta name="description" content="Bản đồ cơ sở B UEH: tìm phòng, chỉ đường theo tầng, tiện ích và hướng dẫn cho tân sinh viên. Dự án sinh viên, không chính thức.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%A7%AD%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1f6f5;--sf:#fff;--tx:#12302f;--mu:#5b7270;--br:#d2e0de;--pr:#00716b;--pr2:#dff0ee;--ac:#f28a1f;--bad:#c0392b;--cor:#e6eeed;--hd:#00716b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1b1a;--sf:#162827;--sf:#162827;--tx:#e3f0ee;--mu:#93aeab;--br:#2a4543;--pr:#37b3aa;--pr2:#1b3a38;--ac:#ffa94d;--bad:#ff7b6b;--cor:#1f3634;--hd:#0a4a46;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1b1a;--sf:#162827;--tx:#e3f0ee;--mu:#93aeab;--br:#2a4543;--pr:#37b3aa;--pr2:#1b3a38;--ac:#ffa94d;--bad:#ff7b6b;--cor:#1f3634;--hd:#0a4a46;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font:15px/1.5 "Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tx)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hd);z-index:30}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--hd);color:#fff;display:flex;align-items:center;gap:16px;padding:10px 16px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:18px;letter-spacing:.2px;margin-right:auto}
+.logo small{font-weight:400;opacity:.8;margin-left:6px}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;padding:6px 12px;border-radius:8px;opacity:.85}
+nav a.on,nav a:hover{background:rgba(255,255,255,.18);opacity:1}
+main{max-width:1280px;margin:0 auto;padding:16px}
+.view{display:none}.view.on{display:block}
+.hero{padding:44px 24px;border-radius:14px;background:linear-gradient(var(--pr2) 1px,transparent 1px) 0 0/36px 36px,linear-gradient(90deg,var(--pr2) 1px,transparent 1px) 0 0/36px 36px,var(--sf);border:1px solid var(--br)}
+.hero h1{font-size:clamp(28px,5vw,46px);line-height:1.15;margin:0 0 10px;max-width:16em}
+.hero p{color:var(--mu);margin:0 0 22px;max-width:36em}
+.big{display:flex;gap:8px;max-width:620px}
+.big input{flex:1;padding:14px 16px;border-radius:12px;border:2px solid var(--pr);background:var(--sf);font-size:17px;min-width:0}
+.btn{background:var(--pr);color:#fff;border:0;border-radius:10px;padding:9px 16px;font-weight:500}
+.btn.alt{background:var(--pr2);color:var(--pr)}
+.btn.sm{padding:5px 10px;font-size:13px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.chip{border:1px solid var(--br);background:var(--sf);border-radius:99px;padding:3px 11px;font-size:13px}
+.chip.on{background:var(--pr);color:#fff;border-color:var(--pr)}
+.campus{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:22px}
+.campus button{text-align:left;background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:14px}
+.campus b{display:block;font-size:20px}
+.campus span{color:var(--mu);font-size:13px}
+.campus .ready{border-color:var(--pr);box-shadow:inset 4px 0 0 var(--pr)}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:18px}
+.card{background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:14px}
+.card h3{margin:0 0 4px;font-size:16px}
+.card p{margin:0;color:var(--mu);font-size:14px}
+.mapwrap{display:grid;grid-template-columns:300px 1fr;gap:14px;align-items:start}
+aside{background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:12px;max-height:calc(100vh - 90px);overflow:auto}
+aside summary{font-weight:700;cursor:pointer}
+aside h4{margin:14px 0 6px;font-size:14px}
+aside input,aside select,aside textarea,.form input,.form select,.form textarea{width:100%;padding:8px 10px;border:1px solid var(--br);border-radius:8px;background:var(--bg);margin-bottom:6px}
+.row{display:flex;gap:6px}
+.res{list-style:none;padding:0;margin:6px 0}
+.res li button{width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--br);padding:6px 2px}
+.res small{color:var(--mu)}
+.stage{position:relative;background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:10px}
+.floors{display:flex;gap:6px;margin-bottom:8px;align-items:center;flex-wrap:wrap}
+.floors .chip{font-size:14px;padding:5px 14px}
+svg.map{width:100%;height:auto;display:block;touch-action:manipulation}
+svg.map text{font-family:inherit;pointer-events:none}
+.node{cursor:pointer}
+.route{stroke:var(--ac);stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:10 8;animation:dash 1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-18}}
+.pulse{animation:pl 1.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pl{from{transform:scale(1);opacity:.7}to{transform:scale(2.6);opacity:0}}
+@media(prefers-reduced-motion:reduce){.route,.pulse{animation:none}}
+.panel{position:absolute;right:14px;top:56px;width:280px;background:var(--sf);border:1px solid var(--br);border-radius:12px;padding:12px;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.panel h3{margin:0 0 2px}
+.panel .x{float:right;border:0;background:none;font-size:20px;line-height:1}
+.tag{display:inline-block;background:var(--pr2);color:var(--pr);border-radius:6px;padding:0 7px;font-size:12px;margin:0 4px 4px 0}
+.warn{color:var(--bad);font-weight:500}
+.p360{background:var(--bg);border:1px dashed var(--br);border-radius:8px;padding:10px;font-size:13px;color:var(--mu);margin-top:8px}
+.steps{padding-left:18px;margin:6px 0;font-size:14px}
+.sec{margin-top:22px}.sec h2{margin:0 0 10px;font-size:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.form{max-width:520px}
+.rep{display:flex;justify-content:space-between;gap:8px;align-items:center;border-bottom:1px solid var(--br);padding:8px 0;font-size:14px}
+.chatbtn{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:25;border-radius:99px;padding:12px 18px;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.chat{position:fixed;right:16px;bottom:calc(70px + env(safe-area-inset-bottom,0px));width:min(360px,calc(100vw - 32px));height:min(460px,60vh);background:var(--sf);border:1px solid var(--br);border-radius:14px;z-index:25;display:none;flex-direction:column;box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.chat.on{display:flex}
+.chat header{position:static;border-radius:14px 14px 0 0;padding:8px 12px}
+#log{flex:1;overflow:auto;padding:10px;display:flex;flex-direction:column;gap:6px}
+.m{padding:7px 11px;border-radius:12px;max-width:85%;font-size:14px}
+.m.u{align-self:flex-end;background:var(--pr);color:#fff}
+.m.b{background:var(--pr2)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:8px 16px;border-radius:10px;z-index:40;display:none;max-width:90vw}
+@media(max-width:860px){.mapwrap{grid-template-columns:1fr}aside{max-height:none}.panel{position:static;width:auto;margin-top:8px;box-shadow:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">UEH Campus Guide<small>bản mẫu</small></div>
+<nav id="nav"><a href="#home">Trang chủ</a><a href="#map">Bản đồ</a><a href="#utils">Tiện ích</a><a href="#support">Hỗ trợ</a></nav>
+</header>
+<main>
+
+<section class="view" id="v-home">
+<div class="hero">
+<h1>Tìm đúng phòng, đúng tầng, không đi lạc.</h1>
+<p>Bản đồ trong trường, chỉ đường từng bước và báo nhanh khi tiện ích gặp sự cố. Dành cho sinh viên UEH.</p>
+<div class="big"><input id="hq" placeholder="Nhập mã phòng, tiện ích hoặc #hashtag" aria-label="Tìm kiếm"><button class="btn" id="hgo">Tìm</button></div>
+<div class="chips" id="hchips"></div>
+<div class="campus" id="campus"></div>
+</div>
+<div class="feat" id="feat"></div>
+</section>
+
+<section class="view" id="v-map">
+<div class="mapwrap">
+<aside>
+<details id="side" open><summary>Tìm kiếm, tìm đường và bộ lọc</summary>
+<h4>Tìm kiếm</h4>
+<input id="q" placeholder="Mã phòng, tên, #wc, #thuvien" aria-label="Tìm trên bản đồ">
+<div class="chips" id="sugg"></div>
+<ul class="res" id="res"></ul>
+<h4>Loại địa điểm</h4>
+<div class="chips" id="types"></div>
+<button class="btn alt sm" id="reset">Đặt lại bản đồ</button>
+<h4>Tìm đường</h4>
+<select id="from" aria-label="Điểm xuất phát"></select>
+<select id="to" aria-label="Điểm đến"></select>
+<select id="pref" aria-label="Ưu tiên"><option value="lift">Ưu tiên thang máy</option><option value="stairs">Ưu tiên thang bộ</option></select>
+<div class="row"><button class="btn" id="go">Tìm đường</button><button class="btn alt" id="swap">Đổi chiều</button></div>
+<ol class="steps" id="steps"></ol>
+<h4>Vị trí của tôi</h4>
+<select id="me" aria-label="Điểm quét QR"></select>
+<div class="row"><button class="btn alt sm" id="qr">Giả lập quét QR</button><button class="btn alt sm" id="gps">Dùng GPS</button></div>
+<h4>Lịch học (đi lớp kế tiếp)</h4>
+<textarea id="sch" rows="4" aria-label="Thời khóa biểu"></textarea>
+<button class="btn alt sm" id="schsave">Lưu lịch</button>
+<div id="schgo" class="chips"></div>
+</details>
+</aside>
+<div class="stage">
+<div class="floors" id="floors"></div>
+<div id="svgbox"></div>
+<div class="panel" id="panel" hidden></div>
+</div>
+</div>
+</section>
+
+<section class="view" id="v-utils"><div class="sec" style="margin-top:0"><h2>Tiện ích trong trường</h2><div class="grid" id="ugrid"></div></div></section>
+
+<section class="view" id="v-support">
+<div class="sec" style="margin-top:0"><h2>Dành cho tân sinh viên</h2>
+<div class="grid">
+<div class="card"><h3>Chào mừng đến UEH</h3><p>Mỗi cơ sở có giờ hoạt động và đặc điểm riêng. Hãy xem bản đồ cơ sở trước ngày đầu đi học.</p></div>
+<div class="card"><h3>In ấn</h3><p>Số trang in miễn phí mỗi kỳ: [điền số]. Điều kiện dùng USB để in: [điền quy định].</p></div>
+<div class="card"><h3>Giữ xe</h3><p>Lưu ý khi giữ xe: [điền quy định bãi xe].</p></div>
+<div class="card"><h3>Mạng di động và thiết bị</h3><p>Một số khu vực trong nhà sóng yếu. Tải sẵn bản đồ và lịch học trước khi vào.</p></div>
+</div></div>
+<div class="sec"><h2>Hệ thống của UEH</h2>
+<div class="grid">
+<div class="card"><h3>LMS</h3><p>Học liệu, bài tập và thông báo của lớp học phần. [mô tả mẫu]</p></div>
+<div class="card"><h3>Student</h3><p>Thời khóa biểu, điểm và thông tin cá nhân. [mô tả mẫu]</p></div>
+<div class="card"><h3>Payment</h3><p>Thanh toán học phí và các khoản phí. [mô tả mẫu]</p></div>
+<div class="card"><h3>Bus</h3><p>Thông tin xe buýt cho sinh viên. [mô tả mẫu]</p></div>
+<div class="card"><h3>Library</h3><p>Tra cứu và mượn tài liệu. [mô tả mẫu]</p></div>
+<div class="card"><h3>Flex</h3><p>[điền chức năng của hệ thống]</p></div>
+</div></div>
+<div class="sec"><h2>Báo cáo nhanh</h2>
+<div class="form card">
+<select id="rn" aria-label="Địa điểm"></select>
+<select id="rk"><option>Thiết bị hỏng</option><option>Đang vệ sinh</option><option>Đã đổi vị trí</option><option>Tạm ngưng sử dụng</option><option>Góp ý khác</option></select>
+<textarea id="rt" rows="2" placeholder="Ghi chú (không bắt buộc)"></textarea>
+<button class="btn" id="rs">Gửi báo cáo</button>
+<div id="rl"></div>
+</div></div>
+</section>
+</main>
+
+<button class="btn chatbtn" id="cb">Hỏi trợ lý</button>
+<div class="chat" id="chat"><header><b>Trợ lý UEH</b></header><div id="log"></div>
+<div class="row" style="padding:8px"><input id="ci" placeholder="Ví dụ: WC gần mình nhất ở đâu?" style="margin:0;flex:1;padding:8px;border:1px solid var(--br);border-radius:8px;background:var(--bg)"><button class="btn sm" id="cs">Gửi</button></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d');
+const TY={room:['Phòng học','#2f8f83','🎓'],lib:['Học tập','#3f6fb5','📚'],wc:['WC','#7b61c9','🚻'],water:['Máy lọc nước','#1c9bd1','💧'],print:['Máy in','#b5833a','🖨️'],food:['Ăn uống','#d0642c','🍜'],svc:['Dịch vụ','#6c8a3a','ℹ️'],park:['Bãi giữ xe','#6c7a89','🅿️'],gate:['Cổng','#444','🚪'],stair:['Cầu thang','#778','🪜'],lift:['Thang máy','#778','🛗'],hall:['Hành lang','#999','']};
+const N=[],M={};
+const add=(id,f,x,y,t,n,code='',tags='')=>{const o={id,f,x,y,t,n,code,tags,e:[]};N.push(o);M[id]=o};
+const link=(a,b,k)=>{const A=M[a],B=M[b],w=k?(k==='lift'?10:14):Math.hypot(A.x-B.x,A.y-B.y)*.12;A.e.push({to:b,w,k});B.e.push({to:a,w,k})};
+/* Tọa độ lấy theo ảnh sơ đồ cơ sở B */
+const FN={1:'Trệt',2:'Lầu 2',3:'Lầu 3'},VB={1:'60 30 650 370',2:'50 445 330 275',3:'375 445 340 275'};
+const bg=(x,y,w,h)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" fill="var(--sf)" stroke="var(--br)" stroke-width="2"/>`;
+const BG={1:bg(95,100,255,235)+bg(375,100,325,275),2:bg(65,455,300,250),3:bg(390,455,300,250)};
+const B=(id,...a)=>{add(id,...a);M[id].box=1};
+const WCT='#wc nha ve sinh toilet';
+[['a',335,150],['b',335,243],['c',222,245],['d',222,285],['e',222,205],['f',130,245],['m',420,245],['n',540,245],['o',640,245],['p',640,150]].forEach(([k,x,y])=>add('h1'+k,1,x,y,'hall','Hành lang'));
+add('g1',1,340,68,'gate','Cổng 1 (Đào Duy Từ)','','#cong');
+add('g3',1,80,240,'gate','Cổng 279 NTP','','#cong nguyen tri phuong');
+add('g2',1,640,90,'gate','Cổng 2 (Đào Duy Từ)','','#cong');
+add('l1',1,217,312,'lift','Thang máy B1','','#thangmay');
+add('s1',1,145,320,'stair','Cầu thang B1','','#cauthang');
+add('park',1,355,290,'park','Bãi giữ xe','','#guixe');
+B('dsa',1,282,322,'room','Văn phòng DSA B1.111','B1.111','#dsa phong hoc');
+B('wc1',1,172,327,'wc','WC B1','',WCT);
+B('ocb1',1,160,175,'svc','OCB (ATM)','','#atm ocb ngan hang');
+B('ocb2',1,265,175,'svc','OCB (ATM)','','#atm ocb ngan hang');
+B('atm',1,108,115,'svc','ATM','','#atm');
+B('bv',1,138,115,'svc','Bảo vệ','','#baove');
+B('ct',1,530,122,'food','Căn tin - Nhà sách','','#anuong canteen nhasach');
+B('wc2',1,400,355,'wc','WC B2 (trái)','',WCT);
+B('wc3',1,640,355,'wc','WC B2 (phải)','',WCT);
+B('pur',1,525,345,'room','Phòng chưa ghi tên (B2)','','');
+add('h2a',2,235,650,'hall','Hành lang');add('h2b',2,120,650,'hall','Hành lang');
+add('l2',2,230,685,'lift','Thang máy lầu 2','','#thangmay');add('s2',2,80,690,'stair','Cầu thang lầu 2','','#cauthang');
+B('wc4',2,160,697,'wc','WC lầu 2','',WCT);
+B('r203',2,300,668,'room','Phòng B1.203','B1.203','phong hoc');
+B('big2',2,155,545,'room','Phòng lớn chưa ghi tên (lầu 2)','','');
+add('h3a',3,555,650,'hall','Hành lang');add('h3b',3,440,650,'hall','Hành lang');
+add('l3',3,552,685,'lift','Thang máy lầu 3','','#thangmay');add('s3',3,402,690,'stair','Cầu thang lầu 3','','#cauthang');
+B('wc5',3,487,697,'wc','WC lầu 3','',WCT);
+B('r302',3,490,545,'room','Hội trường B1.302','B1.302','#hoitruong phong hoc');
+[['g1','h1a'],['h1a','h1b'],['h1b','h1c'],['h1c','h1d'],['h1c','h1e'],['h1c','h1f'],['h1f','g3'],['h1d','l1'],['h1d','s1'],['h1d','dsa'],['h1d','wc1'],['h1e','ocb1'],['h1e','ocb2'],['h1e','atm'],['h1e','bv'],['h1b','park'],['h1b','h1m'],['h1m','h1n'],['h1n','h1o'],['h1o','h1p'],['h1p','g2'],['h1p','ct'],['h1m','wc2'],['h1o','wc3'],['h1n','pur'],
+['l2','h2a'],['h2a','h2b'],['s2','h2b'],['wc4','h2b'],['r203','h2a'],['big2','h2b'],
+['l3','h3a'],['h3a','h3b'],['s3','h3b'],['wc5','h3b'],['r302','h3b'],
+['l1','l2','lift'],['l2','l3','lift'],['s1','s2','stair'],['s2','s3','stair']].forEach(([a,b,k])=>link(a,b,k));
+const NAV=N.filter(n=>n.t!=='hall');
+const label=n=>`${n.n}${n.code&&!n.n.includes(n.code)?' ('+n.code+')':''} · ${FN[n.f]}`;
+const byCode=c=>N.find(n=>n.code&&norm(n.code)===norm(c));
+
+let S={floor:1,sel:null,route:null,q:'',type:'all',me:'g1',pref:'lift',v360:false,sched:[],rep:[]};
+try{S.rep=JSON.parse(localStorage.getItem('ueh_rep')||'[]')}catch(e){}
+const saveRep=()=>{try{localStorage.setItem('ueh_rep',JSON.stringify(S.rep))}catch(e){}};
+const bad=id=>S.rep.some(r=>r.node===id&&r.ok);
+const pend=id=>S.rep.filter(r=>r.node===id&&!r.ok).length;
+
+function toast(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',3200)}
+function dij(src){const d={},p={},Q=new Set(N.map(n=>n.id));N.forEach(n=>d[n.id]=1e9);d[src]=0;
+ while(Q.size){let u=null;Q.forEach(i=>{if(u===null||d[i]<d[u])u=i});Q.delete(u);if(d[u]>=1e9)break;
+  M[u].e.forEach(({to,w,k})=>{let c=w+(k?((k==='lift')===(S.pref==='lift')?0:60):0);if(d[u]+c<d[to]){d[to]=d[u]+c;p[to]=u}})}
+ return{d,p}}
+function nearest(t){const{d}=dij(S.me);let b=null;N.filter(n=>n.t===t).forEach(n=>{if(!b||d[n.id]<d[b])b=n.id});return b}
+function go(a,b){if(a===b){toast('Điểm đi và điểm đến trùng nhau');return}
+ const{p}=dij(a);const r=[b];while(r[0]!==a)r.unshift(p[r[0]]);S.route=r;S.sel=b;S.floor=M[a].f;S.v360=false;$('#from').value=a;$('#to').value=b;render()}
+function steps(r){const o=[`Xuất phát: ${M[r[0]].n}, tầng ${M[r[0]].f}`];let m=0,fl=0;
+ for(let i=1;i<r.length;i++){const a=M[r[i-1]],b=M[r[i]];if(a.f!==b.f){fl++;o.push(`${b.f>a.f?'Lên':'Xuống'} tầng ${b.f} bằng ${b.t==='lift'?'thang máy':'cầu thang'}`)}else m+=Math.hypot(a.x-b.x,a.y-b.y)*.12}
+ o.push(`Đến nơi: ${M[r.at(-1)].n}`);return{o,m:Math.round(m),min:Math.max(1,Math.ceil(m/72+fl*.5))}}
+function hits(){const q=norm(S.q.replace(/^#/,'')).trim();return N.filter(n=>n.t!=='hall'&&n.t!=='stair'&&(S.type==='all'||n.t===S.type)&&(!q||norm(n.n+' '+n.code+' '+n.tags).includes(q)))}
+const active=()=>S.q.trim()||S.type!=='all';
+function select(id){S.sel=id;S.floor=M[id].f;S.v360=false;render()}
+
+function drawMap(){
+ const f=S.floor,hs=new Set(hits().map(n=>n.id)),act=active();
+ let s=`<svg class="map" viewBox="${VB[f]}" role="img" aria-label="Bản đồ tầng ${f}"><defs><marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--ac)"/></marker></defs>`;
+ s+=BG[f]+`<g stroke="var(--cor)" stroke-width="18" stroke-linecap="round">`+N.filter(n=>n.f===f).flatMap(n=>n.e.filter(x=>M[x.to].f===f&&n.id<x.to&&['hall','gate'].includes(n.t)&&['hall','gate'].includes(M[x.to].t)).map(x=>`<line x1="${n.x}" y1="${n.y}" x2="${M[x.to].x}" y2="${M[x.to].y}"/>`)).join('')+'</g>';
+ N.filter(n=>n.f===f&&n.t!=='hall').forEach(n=>{
+  const T=TY[n.t],dim=act&&!hs.has(n.id)?.28:1,sel=S.sel===n.id,b=bad(n.id);
+  const stroke=sel?'var(--ac)':b?'var(--bad)':T[1];
+  let g=`<g class="node" data-id="${n.id}" opacity="${dim}" tabindex="0" role="button" aria-label="${esc(label(n))}">`;
+  if(n.box){g+=`<rect x="${n.x-32}" y="${n.y-22}" width="64" height="44" rx="8" fill="${T[1]}" fill-opacity=".14" stroke="${stroke}" stroke-width="${sel?4:2}" ${b?'stroke-dasharray="6 4"':''}/><text x="${n.x}" y="${n.y-3}" text-anchor="middle" font-size="16">${T[2]}</text><text x="${n.x}" y="${n.y+15}" text-anchor="middle" font-size="9" font-weight="500" fill="var(--tx)">${esc(n.code||(n.n.length>12?n.n.slice(0,11)+'…':n.n))}</text>`}
+  else{g+=`<circle cx="${n.x}" cy="${n.y}" r="13" fill="var(--sf)" stroke="${stroke}" stroke-width="${sel?4:2}"/><text x="${n.x}" y="${n.y+5}" text-anchor="middle" font-size="14">${T[2]}</text>`;
+   if(n.t==='gate'||n.t==='park')g+=`<text x="${n.x}" y="${n.y+34}" text-anchor="middle" font-size="11" fill="var(--tx)">${esc(n.n)}</text>`}
+  if(b)g+=`<text x="${n.x+36}" y="${n.y-26}" font-size="18">⚠️</text>`;
+  s+=g+'</g>'});
+ if(S.route){const pts=S.route.map(i=>M[i]).filter(n=>n.f===f);if(pts.length>1)s+=`<polyline class="route" marker-mid="url(#ar)" points="${pts.map(n=>n.x+','+n.y).join(' ')}"/>`}
+ const me=M[S.me];if(me.f===f)s+=`<circle class="pulse" cx="${me.x}" cy="${me.y}" r="8" fill="#2f7bff"/><circle cx="${me.x}" cy="${me.y}" r="8" fill="#2f7bff" stroke="#fff" stroke-width="3"/>`;
+ $('#svgbox').innerHTML=s+'</svg>';
+}
+function render(){
+ const rf=S.route?new Set(S.route.map(i=>M[i].f)):new Set();
+ $('#floors').innerHTML=[1,2,3].map(f=>`<button class="chip ${f===S.floor?'on':''}" data-f="${f}">${FN[f]}${rf.has(f)?' •':''}</button>`).join('')+`<span style="color:var(--mu);font-size:13px;margin-left:6px">Cơ sở B · 279 Nguyễn Tri Phương · vẽ lại từ sơ đồ</span>`;
+ drawMap();
+ const hs=hits();
+ $('#res').innerHTML=active()?(hs.slice(0,8).map(n=>`<li><button data-sel="${n.id}">${esc(n.n)}<br><small>Tầng ${n.f}${n.code?' · '+n.code:''}</small></button></li>`).join('')||'<li><small>Không tìm thấy. Thử mã phòng như B1.201 hoặc #wc.</small></li>'):'';
+ $('#types').innerHTML=[['all','Tất cả'],...['room','wc','food','svc','park'].map(k=>[k,TY[k][0]])].map(([k,t])=>`<button class="chip ${S.type===k?'on':''}" data-t="${k}">${t}</button>`).join('');
+ if(S.route){const r=steps(S.route);$('#steps').innerHTML=r.o.map(x=>`<li>${esc(x)}</li>`).join('')+`<li><b>Khoảng ${r.m} m, mất ~${r.min} phút</b></li>`}else $('#steps').innerHTML='';
+ const p=$('#panel'),n=M[S.sel];
+ if(!n){p.hidden=true}else{p.hidden=false;const nu=['wc','water','print','food','lib'].includes(n.t);
+  p.innerHTML=`<button class="x" data-close aria-label="Đóng">×</button><h3>${esc(n.n)}</h3><div style="color:var(--mu);font-size:13px">Tầng ${n.f} · ${TY[n.t][0]}${n.code?' · '+n.code:''}</div>
+  <div style="margin:6px 0">${n.tags.split(' ').filter(t=>t[0]==='#').map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+  ${bad(n.id)?'<div class="warn">Đang gián đoạn (đã xác minh)</div>':pend(n.id)?`<div class="warn">${pend(n.id)} báo cáo đang chờ xác minh</div>`:'<div style="color:var(--mu);font-size:13px">Hoạt động bình thường</div>'}
+  <div class="chips" style="margin-top:8px"><button class="btn sm" data-route="${n.id}">Chỉ đường đến đây</button><button class="btn alt sm" data-setme="${n.id}">Tôi đang ở đây</button>${nu?`<button class="btn alt sm" data-near="${n.t}">Gần nhất</button>`:''}<button class="btn alt sm" data-v360>Ảnh 360°</button><button class="btn alt sm" data-report="${n.id}">Báo sự cố</button></div>
+  ${S.v360?'<div class="p360">Chưa có ảnh 360° cho địa điểm này. Khi có ảnh, trình xem 360° sẽ hiện ở đây.</div>':''}`}
+}
+
+/* điều hướng */
+const views=['home','map','utils','support'];
+function show(){const v=views.includes(location.hash.slice(1))?location.hash.slice(1):'home';
+ views.forEach(x=>{$('#v-'+x).classList.toggle('on',x===v)});
+ document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.hash==='#'+v));
+ if(v==='map')render();window.scrollTo(0,0)}
+addEventListener('hashchange',show);
+
+/* trang chủ, tiện ích */
+const CH=['#wc','#atm','B1.302','Căn tin','#guixe'];
+$('#hchips').innerHTML=CH.map(c=>`<button class="chip" data-hq="${c}">${c}</button>`).join('');
+$('#campus').innerHTML=[['Cơ sở A','Bản đồ sắp có',0],['Cơ sở B','279 Nguyễn Tri Phương · trệt, lầu 2, lầu 3',1],['Cơ sở N','Bản đồ sắp có',0]].map(([a,b,r])=>`<button class="${r?'ready':''}" ${r?'data-open':'data-soon'}><b>${a}</b><span>${b}</span></button>`).join('');
+$('#feat').innerHTML=[['Bản đồ theo tầng','Chuyển tầng, chọn phòng để xem thông tin.'],['Chỉ đường từng bước','Có mũi tên, nhận biết tầng, chọn thang máy hoặc thang bộ.'],['Lớp kế tiếp','Nhập lịch học, bấm một lần để thấy đường sang phòng sau.'],['Báo sự cố','Máy lọc nước hỏng, WC đang vệ sinh? Báo ngay để bạn khác biết.']].map(([a,b])=>`<div class="card"><h3>${a}</h3><p>${b}</p></div>`).join('');
+$('#ugrid').innerHTML=['wc','food','svc','park'].map(k=>`<div class="card"><h3>${TY[k][2]} ${TY[k][0]}</h3>${N.filter(n=>n.t===k).map(n=>`<div class="rep"><span>${esc(n.n)}<br><small style="color:var(--mu)">Tầng ${n.f}</small></span><button class="btn alt sm" data-sel="${n.id}">Xem</button></div>`).join('')}<button class="btn sm" style="margin-top:8px" data-near="${k}">Tìm cái gần nhất</button></div>`).join('');
+
+/* sidebar */
+const opts=NAV.map(n=>`<option value="${n.id}">${esc(label(n))}</option>`).join('');
+['from','to','me','rn'].forEach(i=>$('#'+i).innerHTML=opts);
+$('#from').value='g1';$('#to').value='r302';$('#me').value='g1';
+$('#rn').innerHTML=NAV.filter(n=>['water','wc','print','lift','food'].includes(n.t)).map(n=>`<option value="${n.id}">${esc(label(n))}</option>`).join('');
+$('#sugg').innerHTML=['#wc','#atm','B1.302','#guixe'].map(c=>`<button class="chip" data-hq="${c}">${c}</button>`).join('');
+$('#sch').value='07:00 B1.111\n09:30 B1.203\n13:00 B1.302';
+if(innerWidth<860)$('#side').open=false;
+
+function schedule(){S.sched=$('#sch').value.split('\n').map(l=>{const m=l.match(/([A-Za-z]\d\.\d{3})/);return m&&byCode(m[1])?{t:l.trim(),n:byCode(m[1])}:null}).filter(Boolean);
+ $('#schgo').innerHTML=S.sched.slice(0,-1).map((s,i)=>`<button class="chip" data-cls="${i}">${esc(s.n.code)} → ${esc(S.sched[i+1].n.code)}</button>`).join('')||'<small>Nhập mỗi dòng: giờ và mã phòng.</small>'}
+schedule();
+
+function near(t){const id=nearest(t);if(!id)return;go(S.me,id);if(innerWidth<860)$('#side').open=false;location.hash='map';return M[id]}
+
+/* sự kiện */
+document.addEventListener('click',e=>{
+ const c=e.target.closest('[data-id],[data-f],[data-sel],[data-t],[data-route],[data-setme],[data-near],[data-v360],[data-report],[data-close],[data-hq],[data-open],[data-soon],[data-cls],[data-ver],[data-del]');if(!c)return;
+ const d=c.dataset;
+ if('id' in d)select(d.id);
+ else if('f' in d){S.floor=+d.f;render()}
+ else if('sel' in d){location.hash='map';select(d.sel)}
+ else if('t' in d){S.type=d.t;render()}
+ else if('route' in d)go(S.me,d.route);
+ else if('setme' in d){S.me=d.setme;$('#me').value=d.setme;render();toast('Đã đặt vị trí của bạn')}
+ else if('near' in d)near(d.near);
+ else if('v360' in d){S.v360=!S.v360;render()}
+ else if('report' in d){location.hash='support';$('#rn').value=d.report}
+ else if('close' in d){S.sel=null;render()}
+ else if('hq' in d){S.q=d.hq;$('#q').value=d.hq;location.hash='map';render()}
+ else if('open' in d)location.hash='map';
+ else if('soon' in d)toast('Bản đồ cơ sở này sẽ được thêm khi có dữ liệu');
+ else if('cls' in d){const i=+d.cls;go(S.sched[i].n.id,S.sched[i+1].n.id);toast('Đường từ lớp hiện tại đến lớp kế tiếp')}
+ else if('ver' in d){const r=S.rep.find(x=>x.id==d.ver);r.ok=!r.ok;saveRep();renderRep();render()}
+ else if('del' in d){S.rep=S.rep.filter(x=>x.id!=d.del);saveRep();renderRep();render()}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.dataset&&e.target.dataset.id)select(e.target.dataset.id)});
+$('#q').oninput=e=>{S.q=e.target.value;render()};
+$('#hgo').onclick=()=>{S.q=$('#hq').value;$('#q').value=S.q;location.hash='map';render()};
+$('#hq').onkeydown=e=>{if(e.key==='Enter')$('#hgo').click()};
+$('#reset').onclick=()=>{S.q='';S.type='all';S.route=null;S.sel=null;$('#q').value='';render()};
+$('#go').onclick=()=>{S.pref=$('#pref').value;go($('#from').value,$('#to').value)};
+$('#swap').onclick=()=>{const a=$('#from').value;$('#from').value=$('#to').value;$('#to').value=a;$('#go').click()};
+$('#pref').onchange=()=>S.pref=$('#pref').value;
+$('#qr').onclick=()=>{S.me=$('#me').value;$('#from').value=S.me;render();toast('Đã xác định vị trí xuất phát')};
+$('#gps').onclick=()=>{if(!navigator.geolocation){toast('Thiết bị không hỗ trợ GPS');return}
+ navigator.geolocation.getCurrentPosition(p=>{S.me='g1';render();toast(`Nhận GPS (±${Math.round(p.coords.accuracy)} m). Chưa có tọa độ thật của trường nên tạm đặt ở Cổng B`)},()=>toast('Không lấy được vị trí. Hãy dùng quét QR'),{timeout:6000})};
+$('#schsave').onclick=schedule;
+function renderRep(){$('#rl').innerHTML=S.rep.map(r=>`<div class="rep"><span>${esc(M[r.node].n)} · ${esc(r.kind)}${r.note?'<br><small>'+esc(r.note)+'</small>':''}<br><small style="color:${r.ok?'var(--bad)':'var(--mu)'}">${r.ok?'Đã xác minh':'Chờ xác minh'}</small></span><span><button class="btn alt sm" data-ver="${r.id}">${r.ok?'Bỏ xác minh':'Xác minh (demo)'}</button> <button class="btn alt sm" data-del="${r.id}">Đã khắc phục</button></span></div>`).join('')}
+$('#rs').onclick=()=>{S.rep.push({id:Date.now(),node:$('#rn').value,kind:$('#rk').value,note:$('#rt').value.trim(),ok:false});$('#rt').value='';saveRep();renderRep();toast('Đã gửi báo cáo. Cảm ơn bạn!')};
+renderRep();
+
+/* trợ lý (quy tắc đơn giản, chưa dùng AI thật) */
+const KW=[['wc|nha ve sinh|toilet|ve sinh','wc'],['nuoc','water'],['may in|photocopy| in ','print'],['can tin|an uong|doi|an ','food'],['thu vien|tu hoc|sach','lib'],['gui xe|bai xe|do xe','park']];
+function say(t,u){const m=document.createElement('div');m.className='m '+(u?'u':'b');m.textContent=t;$('#log').append(m);$('#log').scrollTop=1e9}
+function reply(t){t=t.replace(/(\d)-(\d{3})/g,'$1.$2');const x=' '+norm(t)+' ',codes=(t.match(/[A-Za-z]\d\.\d{3}/g)||[]).map(byCode).filter(Boolean);
+ if(codes.length>=2){go(codes[0].id,codes[1].id);location.hash='map';return`Mình đã vẽ đường từ ${codes[0].code} đến ${codes[1].code}.`}
+ if(codes.length===1){const n=codes[0];if(/duong|di |toi/.test(x)){go(S.me,n.id)}else select(n.id);location.hash='map';return`${n.n} ở tầng ${n.f}. Mình đã mở trên bản đồ.`}
+ for(const[k,ty]of KW)if(new RegExp(k).test(x)){const n=near(ty);if(n)return`${TY[ty][0]} gần bạn nhất: ${n.n}, tầng ${n.f}. Mình đã vẽ đường đi.`}
+ if(/tan sinh vien|lms|hoc phi|he thong|in mien phi/.test(x)){location.hash='support';return'Mình mở trang Hỗ trợ có hướng dẫn cho tân sinh viên.'}
+ return'Mình chưa hiểu. Thử: “Phòng B1.302 ở đâu?”, “WC gần mình nhất ở đâu?”, hoặc “đường từ B1.111 đến B1.302”.'}
+function ask(){const v=$('#ci').value.trim();if(!v)return;say(v,1);$('#ci').value='';say(reply(v))}
+$('#cb').onclick=()=>{$('#chat').classList.toggle('on');if(!$('#log').children.length)say('Chào bạn! Bạn cần tìm phòng hay tiện ích nào?')};
+$('#cs').onclick=ask;$('#ci').onkeydown=e=>{if(e.key==='Enter')ask()};
+show();
+</script>
+</body>
+</html>
